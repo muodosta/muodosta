@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, monospace" font-size="14" role="img" aria-label="muodosta GitHub profile">
+  <rect x="0.5" y="0.5" width="819" height="479" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+  <circle cx="22" cy="20" r="6" fill="#ff5f56"/>
+  <circle cx="42" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="62" cy="20" r="6" fill="#27c93f"/>
+  <text x="410" y="24" fill="#57606a" text-anchor="middle" font-size="12">muodosta@github: ~</text>
+  <text x="40" y="66"><tspan fill="#1a7f37">muodosta@github</tspan><tspan fill="#57606a">:~$ </tspan><tspan fill="#24292f">neofetch</tspan></text>
+  <rect x="80" y="112" width="14" height="14" fill="#1a7f37"/>
+  <rect x="170" y="112" width="14" height="14" fill="#1a7f37"/>
+  <rect x="95" y="127" width="14" height="14" fill="#1a7f37"/>
+  <rect x="155" y="127" width="14" height="14" fill="#1a7f37"/>
+  <rect x="80" y="142" width="14" height="14" fill="#1a7f37"/>
+  <rect x="95" y="142" width="14" height="14" fill="#1a7f37"/>
+  <rect x="110" y="142" width="14" height="14" fill="#1a7f37"/>
+  <rect x="125" y="142" width="14" height="14" fill="#1a7f37"/>
+  <rect x="140" y="142" width="14" height="14" fill="#1a7f37"/>
+  <rect x="155" y="142" width="14" height="14" fill="#1a7f37"/>
+  <rect x="170" y="142" width="14" height="14" fill="#1a7f37"/>
+  <rect x="65" y="157" width="14" height="14" fill="#1a7f37"/>
+  <rect x="80" y="157" width="14" height="14" fill="#1a7f37"/>
+  <rect x="110" y="157" width="14" height="14" fill="#1a7f37"/>
+  <rect x="125" y="157" width="14" height="14" fill="#1a7f37"/>
+  <rect x="140" y="157" width="14" height="14" fill="#1a7f37"/>
+  <rect x="170" y="157" width="14" height="14" fill="#1a7f37"/>
+  <rect x="185" y="157" width="14" height="14" fill="#1a7f37"/>
+  <rect x="50" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="65" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="80" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="95" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="110" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="125" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="140" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="155" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="170" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="185" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="200" y="172" width="14" height="14" fill="#1a7f37"/>
+  <rect x="50" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="80" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="95" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="110" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="125" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="140" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="155" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="170" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="200" y="187" width="14" height="14" fill="#1a7f37"/>
+  <rect x="50" y="202" width="14" height="14" fill="#1a7f37"/>
+  <rect x="80" y="202" width="14" height="14" fill="#1a7f37"/>
+  <rect x="170" y="202" width="14" height="14" fill="#1a7f37"/>
+  <rect x="200" y="202" width="14" height="14" fill="#1a7f37"/>
+  <rect x="95" y="217" width="14" height="14" fill="#1a7f37"/>
+  <rect x="110" y="217" width="14" height="14" fill="#1a7f37"/>
+  <rect x="140" y="217" width="14" height="14" fill="#1a7f37"/>
+  <rect x="155" y="217" width="14" height="14" fill="#1a7f37"/>
+  <text x="300" y="108" font-weight="bold"><tspan fill="#1a7f37">muodosta</tspan><tspan fill="#57606a">@</tspan><tspan fill="#1a7f37">github</tspan></text>
+  <rect x="300" y="117" width="126" height="1" fill="#d0d7de"/>
+  <text x="300" y="142" fill="#0969da" font-weight="bold">role</text>
+  <text x="410" y="142" fill="#24292f" font-weight="normal">backend / devops</text>
+  <text x="300" y="166" fill="#0969da" font-weight="bold">stack</text>
+  <text x="410" y="166" fill="#24292f" font-weight="normal">python · bash · oracle · docker</text>
+  <text x="300" y="190" fill="#0969da" font-weight="bold">now</text>
+  <text x="410" y="190" fill="#24292f" font-weight="normal">proxies &amp; server utilities</text>
+  <text x="300" y="214" fill="#0969da" font-weight="bold">uptime</text>
+  <text x="410" y="214" fill="#24292f" font-weight="normal">4y 8m</text>
+  <text x="300" y="238" fill="#0969da" font-weight="bold">repos</text>
+  <text x="410" y="238" fill="#24292f" font-weight="normal">5 (3 own, 2 forks)</text>
+  <text x="300" y="262" fill="#0969da" font-weight="bold">stars</text>
+  <text x="410" y="262" fill="#24292f" font-weight="normal">0</text>
+  <text x="300" y="286" fill="#0969da" font-weight="bold">followers</text>
+  <text x="410" y="286" fill="#24292f" font-weight="normal">9</text>
+  <text x="300" y="322" fill="#0969da" font-weight="bold">languages</text>
+  <text x="300" y="346" fill="#24292f" font-weight="normal">Shell</text>
+  <rect x="410" y="336" width="200" height="10" rx="2" fill="#eaeef2"/>
+  <rect x="410" y="336" width="195.8" height="10" rx="2" fill="#1a7f37"/>
+  <text x="622" y="346" fill="#57606a" font-weight="normal">98%</text>
+  <text x="300" y="370" fill="#24292f" font-weight="normal">Python</text>
+  <rect x="410" y="360" width="200" height="10" rx="2" fill="#eaeef2"/>
+  <rect x="410" y="360" width="4.2" height="10" rx="2" fill="#1a7f37"/>
+  <text x="622" y="370" fill="#57606a" font-weight="normal">2%</text>
+  <rect x="300" y="400" width="22" height="14" rx="2" fill="#ff5f56"/>
+  <rect x="326" y="400" width="22" height="14" rx="2" fill="#ffbd2e"/>
+  <rect x="352" y="400" width="22" height="14" rx="2" fill="#27c93f"/>
+  <rect x="378" y="400" width="22" height="14" rx="2" fill="#0969da"/>
+  <rect x="404" y="400" width="22" height="14" rx="2" fill="#bc8cff"/>
+  <rect x="430" y="400" width="22" height="14" rx="2" fill="#39c5cf"/>
+  <rect x="456" y="400" width="22" height="14" rx="2" fill="#24292f"/>
+  <rect x="482" y="400" width="22" height="14" rx="2" fill="#57606a"/>
+  <text x="40" y="452"><tspan fill="#1a7f37">muodosta@github</tspan><tspan fill="#57606a">:~$ </tspan></text>
+  <rect x="191.2" y="440" width="8" height="15" fill="#24292f"><animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></rect>
+</svg>
