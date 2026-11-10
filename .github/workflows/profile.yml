@@ -24,9 +24,9 @@ jobs:
           python-version: "3.12"
 
       - name: Generate card
-        run: python scripts/gen_profile.py --user "${{ github.repository_owner }}" --out assets
+        run: python scripts/gen_profile.py --user "${{ github.repository_owner }}" --out assets --private
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATS_TOKEN: ${{ secrets.PROFILE_TOKEN }}
 
       - name: Commit changes
         run: |

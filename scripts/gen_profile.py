@@ -17,10 +17,12 @@ from pathlib import Path
 # Статичные поля карточки
 CONFIG = {
     "role": "backend / devops",
-    "stack": "python · bash · oracle · docker",
+    "stack": "python · postgresql · docker",
     "now": "proxies & server utilities",
 }
-MAX_LANGS = 6
+MAX_LANGS = 4
+# Языки, которые не нужно показывать (разметка, конфиги и т.п.)
+EXCLUDE_LANGS = {"HTML", "CSS", "Jupyter Notebook", "Dockerfile"}
 
 THEMES = {
     "dark": dict(bg="#0d1117", border="#30363d", fg="#c9d1d9", dim="#8b949e",
@@ -29,7 +31,7 @@ THEMES = {
                   key="#0969da", accent="#1a7f37", track="#eaeef2"),
 }
 
-# Пиксель арт 11x8
+# Пиксель-арт 11x8
 INVADER = [
     "  #     #  ",
     "   #   #   ",
@@ -55,11 +57,15 @@ def api(path: str, token: str | None):
         return json.load(resp)
 
 
-def fetch_stats(user: str, token: str | None) -> dict:
+def fetch_stats(user: str, token: str | None, private: bool = False) -> dict:
     profile = api(f"/users/{user}", token)
+    if private:  # нужен токен с доступом к приватным репозиториям
+        path = "/user/repos?per_page=100&affiliation=owner&visibility=all"
+    else:
+        path = f"/users/{user}/repos?per_page=100&type=owner"
     repos, page = [], 1
     while True:
-        chunk = api(f"/users/{user}/repos?per_page=100&type=owner&page={page}", token)
+        chunk = api(f"{path}&page={page}", token)
         repos += chunk
         if len(chunk) < 100:
             break
@@ -68,6 +74,8 @@ def fetch_stats(user: str, token: str | None) -> dict:
     langs = Counter()
     for repo in own:
         langs.update(api(f"/repos/{repo['full_name']}/languages", token))
+    for name in EXCLUDE_LANGS:
+        langs.pop(name, None)
     return {
         "user": user,
         "created": profile["created_at"],
@@ -115,7 +123,7 @@ def render(stats: dict, theme: str) -> str:
     out.append(f'<text x="40" y="66"><tspan fill="{c["accent"]}">{user}@github</tspan>'
                f'<tspan fill="{c["dim"]}">:~$ </tspan><tspan fill="{c["fg"]}">neofetch</tspan></text>')
 
-    # Пиксель арт
+    # Пиксель-арт
     px = 15
     for row, line in enumerate(INVADER):
         for col, ch in enumerate(line):
@@ -162,12 +170,12 @@ def render(stats: dict, theme: str) -> str:
             text(x_val + bar_w + 12, y, f"{share * 100:.0f}%", c["dim"])
             y += 24
 
-    # Цветовая палитра
+    # Цветовая палитра, как в neofetch
     y += 6
     for i, color in enumerate(("#ff5f56", "#ffbd2e", "#27c93f", c["key"], "#bc8cff", "#39c5cf", c["fg"], c["dim"])):
         out.append(f'<rect x="{x_info + i * 26}" y="{y}" width="22" height="14" rx="2" fill="{color}"/>')
 
-    # Мигающий курсор
+    # Финальный промпт с мигающим курсором
     y += 52
     out.append(f'<text x="40" y="{y}"><tspan fill="{c["accent"]}">{user}@github</tspan>'
                f'<tspan fill="{c["dim"]}">:~$ </tspan></text>')
@@ -188,9 +196,11 @@ def main():
     parser.add_argument("--user", default="muodosta")
     parser.add_argument("--out", default="assets")
     parser.add_argument("--demo", action="store_true", help="данные-заглушки, без сети")
+    parser.add_argument("--private", action="store_true", help="учитывать приватные репозитории")
     args = parser.parse_args()
 
-    stats = demo_stats(args.user) if args.demo else fetch_stats(args.user, os.getenv("GITHUB_TOKEN"))
+    token = os.getenv("STATS_TOKEN") or os.getenv("GITHUB_TOKEN")
+    stats = demo_stats(args.user) if args.demo else fetch_stats(args.user, token, args.private)
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     for theme in THEMES:
