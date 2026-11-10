@@ -70,12 +70,12 @@
   <text x="300" y="322" fill="#58a6ff" font-weight="bold">languages</text>
   <text x="300" y="346" fill="#c9d1d9" font-weight="normal">Shell</text>
   <rect x="410" y="336" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="336" width="195.8" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="346" fill="#8b949e" font-weight="normal">98%</text>
+  <rect x="410" y="336" width="178.4" height="10" rx="2" fill="#3fb950"/>
+  <text x="622" y="346" fill="#8b949e" font-weight="normal">89%</text>
   <text x="300" y="370" fill="#c9d1d9" font-weight="normal">Python</text>
   <rect x="410" y="360" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="360" width="4.2" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="370" fill="#8b949e" font-weight="normal">2%</text>
+  <rect x="410" y="360" width="21.6" height="10" rx="2" fill="#3fb950"/>
+  <text x="622" y="370" fill="#8b949e" font-weight="normal">11%</text>
   <rect x="300" y="400" width="22" height="14" rx="2" fill="#ff5f56"/>
   <rect x="326" y="400" width="22" height="14" rx="2" fill="#ffbd2e"/>
   <rect x="352" y="400" width="22" height="14" rx="2" fill="#27c93f"/>
