@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Генерирует neofetch-подобную карточку профиля GitHub (тёмная и светлая SVG)
+"""Генерирует анимированную neofetch-подобную карточку профиля GitHub (dark/light SVG)
 
 Данные берутся из GitHub REST API, внешние сервисы не нужны
-Запуск:  python scripts/gen_profile.py --user muodosta --out assets
-Превью без сети:  python scripts/gen_profile.py --demo --out assets
+Анимация (набор команды, построчное появление, рост полос) — чистый CSS внутри SVG.
+
+Запуск:         python scripts/gen_profile.py --user muodosta --out assets --private
+Превью офлайн:  python scripts/gen_profile.py --demo --out assets
+Без анимации:   добавить --static
 """
 import argparse
 import json
@@ -17,9 +20,10 @@ from pathlib import Path
 # Статичные поля карточки
 CONFIG = {
     "role": "backend / devops",
-    "stack": "python · postgresql · docker",
+    "stack": "python · c# · postgresql · docker",
     "now": "proxies & server utilities",
 }
+COMMAND = "neofetch"
 MAX_LANGS = 6
 # Языки, которые не нужно показывать (разметка, конфиги и т.п.)
 EXCLUDE_LANGS = {"HTML", "CSS", "Jupyter Notebook", "Dockerfile"}
@@ -31,7 +35,7 @@ THEMES = {
                   key="#0969da", accent="#1a7f37", track="#eaeef2"),
 }
 
-# Пиксель-арт 11x8
+# Пиксель-арт 11x8 (отсылка к статусу 👾).
 INVADER = [
     "  #     #  ",
     "   #   #   ",
@@ -46,6 +50,24 @@ INVADER = [
 FONT = ("ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', "
         "Consolas, 'Liberation Mono', Menlo, monospace")
 API = "https://api.github.com"
+
+# Тайминги анимации, секунды
+TYPE_START, TYPE_STEP = 0.4, 0.09   # старт набора команды и пауза между символами
+LINE_STEP = 0.14                    # пауза между строками информации
+
+CSS = """
+.ln{animation:fade .4s ease-out var(--d) backwards}
+.px{animation:pop .25s ease-out var(--d) backwards}
+.ch{animation:typed .01s step-end var(--d) backwards}
+.bar{transform-box:fill-box;transform-origin:left center;animation:grow .9s cubic-bezier(.2,.7,.2,1) var(--d) backwards}
+.cur{animation:blink 1.1s step-end var(--d) infinite}
+@keyframes fade{from{opacity:0;transform:translateX(-8px)}}
+@keyframes pop{from{opacity:0}}
+@keyframes typed{from{fill-opacity:0}}
+@keyframes grow{from{transform:scaleX(0)}}
+@keyframes blink{from,to{fill-opacity:1}50%{fill-opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+"""
 
 
 def api(path: str, token: str | None):
@@ -101,17 +123,24 @@ def uptime(created: str) -> str:
     return f"{years}y {months}m"
 
 
-def render(stats: dict, theme: str) -> str:
+def render(stats: dict, theme: str, animate: bool = True) -> str:
     c = THEMES[theme]
     user = escape(stats["user"])
     x_info, x_val, w = 300, 410, 820
-    out = []
+    out: list[str] = []
 
-    def text(x, y, content, fill, weight="normal"):
-        out.append(f'<text x="{x}" y="{y}" fill="{fill}" font-weight="{weight}">'
-                   f'{escape(content)}</text>')
+    def group(delay: float, *items: str, cls: str = "ln") -> None:
+        """Элементы, которые появляются вместе, начиная с момента delay."""
+        if animate:
+            out.append(f'<g class="{cls}" style="--d:{delay:.2f}s">{"".join(items)}</g>')
+        else:
+            out.append("".join(items))
 
-    # Окно и заголовок
+    def text(x, y, content, fill, weight="normal") -> str:
+        return (f'<text x="{x}" y="{y}" fill="{fill}" font-weight="{weight}">'
+                f'{escape(content)}</text>')
+
+    # Окно и заголовок (видны сразу)
     out.append(f'<rect x="0.5" y="0.5" width="{w - 1}" height="HEIGHT" rx="10" '
                f'fill="{c["bg"]}" stroke="{c["border"]}"/>')
     for i, color in enumerate(("#ff5f56", "#ffbd2e", "#27c93f")):
@@ -119,24 +148,33 @@ def render(stats: dict, theme: str) -> str:
     out.append(f'<text x="{w // 2}" y="24" fill="{c["dim"]}" text-anchor="middle" '
                f'font-size="12">{user}@github: ~</text>')
 
-    # Первая команда
+    # Первая команда: символы «набираются» по одному
+    chars = "".join(
+        f'<tspan class="ch" style="--d:{TYPE_START + i * TYPE_STEP:.2f}s">{escape(ch)}</tspan>'
+        if animate else escape(ch)
+        for i, ch in enumerate(COMMAND)
+    )
     out.append(f'<text x="40" y="66"><tspan fill="{c["accent"]}">{user}@github</tspan>'
-               f'<tspan fill="{c["dim"]}">:~$ </tspan><tspan fill="{c["fg"]}">neofetch</tspan></text>')
+               f'<tspan fill="{c["dim"]}">:~$ </tspan><tspan fill="{c["fg"]}">{chars}</tspan></text>')
 
-    # Пиксель-арт
+    t = TYPE_START + len(COMMAND) * TYPE_STEP + 0.25  # момент, когда команда «выполнилась»
+
+    # Пиксель-арт: строки появляются сверху вниз
     px = 15
     for row, line in enumerate(INVADER):
-        for col, ch in enumerate(line):
-            if ch == "#":
-                out.append(f'<rect x="{50 + col * px}" y="{112 + row * px}" width="{px - 1}" '
-                           f'height="{px - 1}" fill="{c["accent"]}"/>')
+        cells = [f'<rect x="{50 + col * px}" y="{112 + row * px}" width="{px - 1}" '
+                 f'height="{px - 1}" fill="{c["accent"]}"/>'
+                 for col, ch in enumerate(line) if ch == "#"]
+        group(t + row * 0.07, *cells, cls="px")
 
     # Заголовок блока информации
     y = 108
-    out.append(f'<text x="{x_info}" y="{y}" font-weight="bold"><tspan fill="{c["accent"]}">{user}</tspan>'
-               f'<tspan fill="{c["dim"]}">@</tspan><tspan fill="{c["accent"]}">github</tspan></text>')
-    out.append(f'<rect x="{x_info}" y="{y + 9}" width="{len(stats["user"]) * 8.4 + 8.4 * 7:.0f}" '
-               f'height="1" fill="{c["border"]}"/>')
+    header = (f'<text x="{x_info}" y="{y}" font-weight="bold"><tspan fill="{c["accent"]}">{user}</tspan>'
+              f'<tspan fill="{c["dim"]}">@</tspan><tspan fill="{c["accent"]}">github</tspan></text>'
+              f'<rect x="{x_info}" y="{y + 9}" width="{len(stats["user"]) * 8.4 + 8.4 * 7:.0f}" '
+              f'height="1" fill="{c["border"]}"/>')
+    group(t, header)
+    t += LINE_STEP
 
     rows = [
         ("role", CONFIG["role"]),
@@ -149,46 +187,52 @@ def render(stats: dict, theme: str) -> str:
     ]
     y += 34
     for key, value in rows:
-        text(x_info, y, key, c["key"], "bold")
-        text(x_val, y, value, c["fg"])
+        group(t, text(x_info, y, key, c["key"], "bold"), text(x_val, y, value, c["fg"]))
+        t += LINE_STEP
         y += 24
 
-    # Языки
+    # Языки: подпись, затем строки с растущими полосами
     langs = stats["langs"].most_common(MAX_LANGS)
     total = sum(stats["langs"].values()) or 1
     if langs:
         y += 12
-        text(x_info, y, "languages", c["key"], "bold")
+        group(t, text(x_info, y, "languages", c["key"], "bold"))
+        t += LINE_STEP
         y += 24
         bar_w = 200
         for name, size in langs:
             share = size / total
-            text(x_info, y, name, c["fg"])
-            out.append(f'<rect x="{x_val}" y="{y - 10}" width="{bar_w}" height="10" rx="2" fill="{c["track"]}"/>')
-            out.append(f'<rect x="{x_val}" y="{y - 10}" width="{max(share * bar_w, 2):.1f}" height="10" '
-                       f'rx="2" fill="{c["accent"]}"/>')
-            text(x_val + bar_w + 12, y, f"{share * 100:.0f}%", c["dim"])
+            group(t, text(x_info, y, name, c["fg"]),
+                  f'<rect x="{x_val}" y="{y - 10}" width="{bar_w}" height="10" rx="2" fill="{c["track"]}"/>',
+                  text(x_val + bar_w + 12, y, f"{share * 100:.0f}%", c["dim"]))
+            bar = (f'<rect x="{x_val}" y="{y - 10}" width="{max(share * bar_w, 2):.1f}" height="10" '
+                   f'rx="2" fill="{c["accent"]}"/>')
+            group(t + 0.15, bar, cls="bar")
+            t += LINE_STEP
             y += 24
 
     # Цветовая палитра, как в neofetch
     y += 6
-    for i, color in enumerate(("#ff5f56", "#ffbd2e", "#27c93f", c["key"], "#bc8cff", "#39c5cf", c["fg"], c["dim"])):
-        out.append(f'<rect x="{x_info + i * 26}" y="{y}" width="22" height="14" rx="2" fill="{color}"/>')
+    palette = "".join(
+        f'<rect x="{x_info + i * 26}" y="{y}" width="22" height="14" rx="2" fill="{color}"/>'
+        for i, color in enumerate(("#ff5f56", "#ffbd2e", "#27c93f", c["key"], "#bc8cff", "#39c5cf", c["fg"], c["dim"]))
+    )
+    group(t, palette)
+    t += LINE_STEP * 2
 
-    # Финальный промпт с мигающим курсором
+    # Финальный промпт: курсор мигает после завершения всей «загрузки»
     y += 52
-    out.append(f'<text x="40" y="{y}"><tspan fill="{c["accent"]}">{user}@github</tspan>'
-               f'<tspan fill="{c["dim"]}">:~$ </tspan></text>')
-    cursor_x = 40 + (len(stats["user"]) + 7 + 3) * 8.4
-    out.append(f'<rect x="{cursor_x:.1f}" y="{y - 12}" width="8" height="15" fill="{c["fg"]}">'
-               f'<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" '
-               f'repeatCount="indefinite"/></rect>')
+    cursor = (f'<tspan class="cur" fill="{c["fg"]}">█</tspan>' if animate
+              else f'<tspan fill="{c["fg"]}">█</tspan>')
+    group(t, f'<text x="40" y="{y}"><tspan fill="{c["accent"]}">{user}@github</tspan>'
+             f'<tspan fill="{c["dim"]}">:~$ </tspan>{cursor}</text>')
 
     height = y + 28
     body = "\n  ".join(out).replace('height="HEIGHT"', f'height="{height - 1}"')
+    style = f"<style>{CSS}</style>\n  " if animate else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{height}" '
             f'viewBox="0 0 {w} {height}" font-family="{FONT}" font-size="14" role="img" '
-            f'aria-label="{user} GitHub profile">\n  {body}\n</svg>\n')
+            f'aria-label="{user} GitHub profile">\n  {style}{body}\n</svg>\n')
 
 
 def main():
@@ -197,6 +241,7 @@ def main():
     parser.add_argument("--out", default="assets")
     parser.add_argument("--demo", action="store_true", help="данные-заглушки, без сети")
     parser.add_argument("--private", action="store_true", help="учитывать приватные репозитории")
+    parser.add_argument("--static", action="store_true", help="без анимации")
     args = parser.parse_args()
 
     token = os.getenv("STATS_TOKEN") or os.getenv("GITHUB_TOKEN")
@@ -204,7 +249,8 @@ def main():
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     for theme in THEMES:
-        (out_dir / f"profile-{theme}.svg").write_text(render(stats, theme), encoding="utf-8")
+        svg = render(stats, theme, animate=not args.static)
+        (out_dir / f"profile-{theme}.svg").write_text(svg, encoding="utf-8")
         print(f"written {out_dir / f'profile-{theme}.svg'}")
 
 

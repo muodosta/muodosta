@@ -1,105 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="820" height="576" viewBox="0 0 820 576" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, monospace" font-size="14" role="img" aria-label="muodosta GitHub profile">
-  <rect x="0.5" y="0.5" width="819" height="575" rx="10" fill="#0d1117" stroke="#30363d"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480" font-family="ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, monospace" font-size="14" role="img" aria-label="muodosta GitHub profile">
+  <style>
+.ln{animation:fade .4s ease-out var(--d) backwards}
+.px{animation:pop .25s ease-out var(--d) backwards}
+.ch{animation:typed .01s step-end var(--d) backwards}
+.bar{transform-box:fill-box;transform-origin:left center;animation:grow .9s cubic-bezier(.2,.7,.2,1) var(--d) backwards}
+.cur{animation:blink 1.1s step-end var(--d) infinite}
+@keyframes fade{from{opacity:0;transform:translateX(-8px)}}
+@keyframes pop{from{opacity:0}}
+@keyframes typed{from{fill-opacity:0}}
+@keyframes grow{from{transform:scaleX(0)}}
+@keyframes blink{from,to{fill-opacity:1}50%{fill-opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+  <rect x="0.5" y="0.5" width="819" height="479" rx="10" fill="#0d1117" stroke="#30363d"/>
   <circle cx="22" cy="20" r="6" fill="#ff5f56"/>
   <circle cx="42" cy="20" r="6" fill="#ffbd2e"/>
   <circle cx="62" cy="20" r="6" fill="#27c93f"/>
   <text x="410" y="24" fill="#8b949e" text-anchor="middle" font-size="12">muodosta@github: ~</text>
-  <text x="40" y="66"><tspan fill="#3fb950">muodosta@github</tspan><tspan fill="#8b949e">:~$ </tspan><tspan fill="#c9d1d9">neofetch</tspan></text>
-  <rect x="80" y="112" width="14" height="14" fill="#3fb950"/>
-  <rect x="170" y="112" width="14" height="14" fill="#3fb950"/>
-  <rect x="95" y="127" width="14" height="14" fill="#3fb950"/>
-  <rect x="155" y="127" width="14" height="14" fill="#3fb950"/>
-  <rect x="80" y="142" width="14" height="14" fill="#3fb950"/>
-  <rect x="95" y="142" width="14" height="14" fill="#3fb950"/>
-  <rect x="110" y="142" width="14" height="14" fill="#3fb950"/>
-  <rect x="125" y="142" width="14" height="14" fill="#3fb950"/>
-  <rect x="140" y="142" width="14" height="14" fill="#3fb950"/>
-  <rect x="155" y="142" width="14" height="14" fill="#3fb950"/>
-  <rect x="170" y="142" width="14" height="14" fill="#3fb950"/>
-  <rect x="65" y="157" width="14" height="14" fill="#3fb950"/>
-  <rect x="80" y="157" width="14" height="14" fill="#3fb950"/>
-  <rect x="110" y="157" width="14" height="14" fill="#3fb950"/>
-  <rect x="125" y="157" width="14" height="14" fill="#3fb950"/>
-  <rect x="140" y="157" width="14" height="14" fill="#3fb950"/>
-  <rect x="170" y="157" width="14" height="14" fill="#3fb950"/>
-  <rect x="185" y="157" width="14" height="14" fill="#3fb950"/>
-  <rect x="50" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="65" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="80" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="95" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="110" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="125" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="140" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="155" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="170" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="185" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="200" y="172" width="14" height="14" fill="#3fb950"/>
-  <rect x="50" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="80" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="95" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="110" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="125" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="140" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="155" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="170" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="200" y="187" width="14" height="14" fill="#3fb950"/>
-  <rect x="50" y="202" width="14" height="14" fill="#3fb950"/>
-  <rect x="80" y="202" width="14" height="14" fill="#3fb950"/>
-  <rect x="170" y="202" width="14" height="14" fill="#3fb950"/>
-  <rect x="200" y="202" width="14" height="14" fill="#3fb950"/>
-  <rect x="95" y="217" width="14" height="14" fill="#3fb950"/>
-  <rect x="110" y="217" width="14" height="14" fill="#3fb950"/>
-  <rect x="140" y="217" width="14" height="14" fill="#3fb950"/>
-  <rect x="155" y="217" width="14" height="14" fill="#3fb950"/>
-  <text x="300" y="108" font-weight="bold"><tspan fill="#3fb950">muodosta</tspan><tspan fill="#8b949e">@</tspan><tspan fill="#3fb950">github</tspan></text>
-  <rect x="300" y="117" width="126" height="1" fill="#30363d"/>
-  <text x="300" y="142" fill="#58a6ff" font-weight="bold">role</text>
-  <text x="410" y="142" fill="#c9d1d9" font-weight="normal">backend / devops</text>
-  <text x="300" y="166" fill="#58a6ff" font-weight="bold">stack</text>
-  <text x="410" y="166" fill="#c9d1d9" font-weight="normal">python · postgresql · docker</text>
-  <text x="300" y="190" fill="#58a6ff" font-weight="bold">now</text>
-  <text x="410" y="190" fill="#c9d1d9" font-weight="normal">proxies &amp; server utilities</text>
-  <text x="300" y="214" fill="#58a6ff" font-weight="bold">uptime</text>
-  <text x="410" y="214" fill="#c9d1d9" font-weight="normal">4y 8m</text>
-  <text x="300" y="238" fill="#58a6ff" font-weight="bold">repos</text>
-  <text x="410" y="238" fill="#c9d1d9" font-weight="normal">37 (35 own, 2 forks)</text>
-  <text x="300" y="262" fill="#58a6ff" font-weight="bold">stars</text>
-  <text x="410" y="262" fill="#c9d1d9" font-weight="normal">0</text>
-  <text x="300" y="286" fill="#58a6ff" font-weight="bold">followers</text>
-  <text x="410" y="286" fill="#c9d1d9" font-weight="normal">9</text>
-  <text x="300" y="322" fill="#58a6ff" font-weight="bold">languages</text>
-  <text x="300" y="346" fill="#c9d1d9" font-weight="normal">Python</text>
-  <rect x="410" y="336" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="336" width="130.9" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="346" fill="#8b949e" font-weight="normal">65%</text>
-  <text x="300" y="370" fill="#c9d1d9" font-weight="normal">C#</text>
-  <rect x="410" y="360" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="360" width="42.0" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="370" fill="#8b949e" font-weight="normal">21%</text>
-  <text x="300" y="394" fill="#c9d1d9" font-weight="normal">TypeScript</text>
-  <rect x="410" y="384" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="384" width="13.1" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="394" fill="#8b949e" font-weight="normal">7%</text>
-  <text x="300" y="418" fill="#c9d1d9" font-weight="normal">Shell</text>
-  <rect x="410" y="408" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="408" width="5.4" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="418" fill="#8b949e" font-weight="normal">3%</text>
-  <text x="300" y="442" fill="#c9d1d9" font-weight="normal">JavaScript</text>
-  <rect x="410" y="432" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="432" width="3.1" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="442" fill="#8b949e" font-weight="normal">2%</text>
-  <text x="300" y="466" fill="#c9d1d9" font-weight="normal">PowerShell</text>
-  <rect x="410" y="456" width="200" height="10" rx="2" fill="#21262d"/>
-  <rect x="410" y="456" width="2.0" height="10" rx="2" fill="#3fb950"/>
-  <text x="622" y="466" fill="#8b949e" font-weight="normal">1%</text>
-  <rect x="300" y="496" width="22" height="14" rx="2" fill="#ff5f56"/>
-  <rect x="326" y="496" width="22" height="14" rx="2" fill="#ffbd2e"/>
-  <rect x="352" y="496" width="22" height="14" rx="2" fill="#27c93f"/>
-  <rect x="378" y="496" width="22" height="14" rx="2" fill="#58a6ff"/>
-  <rect x="404" y="496" width="22" height="14" rx="2" fill="#bc8cff"/>
-  <rect x="430" y="496" width="22" height="14" rx="2" fill="#39c5cf"/>
-  <rect x="456" y="496" width="22" height="14" rx="2" fill="#c9d1d9"/>
-  <rect x="482" y="496" width="22" height="14" rx="2" fill="#8b949e"/>
-  <text x="40" y="548"><tspan fill="#3fb950">muodosta@github</tspan><tspan fill="#8b949e">:~$ </tspan></text>
-  <rect x="191.2" y="536" width="8" height="15" fill="#c9d1d9"><animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></rect>
+  <text x="40" y="66"><tspan fill="#3fb950">muodosta@github</tspan><tspan fill="#8b949e">:~$ </tspan><tspan fill="#c9d1d9"><tspan class="ch" style="--d:0.40s">n</tspan><tspan class="ch" style="--d:0.49s">e</tspan><tspan class="ch" style="--d:0.58s">o</tspan><tspan class="ch" style="--d:0.67s">f</tspan><tspan class="ch" style="--d:0.76s">e</tspan><tspan class="ch" style="--d:0.85s">t</tspan><tspan class="ch" style="--d:0.94s">c</tspan><tspan class="ch" style="--d:1.03s">h</tspan></tspan></text>
+  <g class="px" style="--d:1.37s"><rect x="80" y="112" width="14" height="14" fill="#3fb950"/><rect x="170" y="112" width="14" height="14" fill="#3fb950"/></g>
+  <g class="px" style="--d:1.44s"><rect x="95" y="127" width="14" height="14" fill="#3fb950"/><rect x="155" y="127" width="14" height="14" fill="#3fb950"/></g>
+  <g class="px" style="--d:1.51s"><rect x="80" y="142" width="14" height="14" fill="#3fb950"/><rect x="95" y="142" width="14" height="14" fill="#3fb950"/><rect x="110" y="142" width="14" height="14" fill="#3fb950"/><rect x="125" y="142" width="14" height="14" fill="#3fb950"/><rect x="140" y="142" width="14" height="14" fill="#3fb950"/><rect x="155" y="142" width="14" height="14" fill="#3fb950"/><rect x="170" y="142" width="14" height="14" fill="#3fb950"/></g>
+  <g class="px" style="--d:1.58s"><rect x="65" y="157" width="14" height="14" fill="#3fb950"/><rect x="80" y="157" width="14" height="14" fill="#3fb950"/><rect x="110" y="157" width="14" height="14" fill="#3fb950"/><rect x="125" y="157" width="14" height="14" fill="#3fb950"/><rect x="140" y="157" width="14" height="14" fill="#3fb950"/><rect x="170" y="157" width="14" height="14" fill="#3fb950"/><rect x="185" y="157" width="14" height="14" fill="#3fb950"/></g>
+  <g class="px" style="--d:1.65s"><rect x="50" y="172" width="14" height="14" fill="#3fb950"/><rect x="65" y="172" width="14" height="14" fill="#3fb950"/><rect x="80" y="172" width="14" height="14" fill="#3fb950"/><rect x="95" y="172" width="14" height="14" fill="#3fb950"/><rect x="110" y="172" width="14" height="14" fill="#3fb950"/><rect x="125" y="172" width="14" height="14" fill="#3fb950"/><rect x="140" y="172" width="14" height="14" fill="#3fb950"/><rect x="155" y="172" width="14" height="14" fill="#3fb950"/><rect x="170" y="172" width="14" height="14" fill="#3fb950"/><rect x="185" y="172" width="14" height="14" fill="#3fb950"/><rect x="200" y="172" width="14" height="14" fill="#3fb950"/></g>
+  <g class="px" style="--d:1.72s"><rect x="50" y="187" width="14" height="14" fill="#3fb950"/><rect x="80" y="187" width="14" height="14" fill="#3fb950"/><rect x="95" y="187" width="14" height="14" fill="#3fb950"/><rect x="110" y="187" width="14" height="14" fill="#3fb950"/><rect x="125" y="187" width="14" height="14" fill="#3fb950"/><rect x="140" y="187" width="14" height="14" fill="#3fb950"/><rect x="155" y="187" width="14" height="14" fill="#3fb950"/><rect x="170" y="187" width="14" height="14" fill="#3fb950"/><rect x="200" y="187" width="14" height="14" fill="#3fb950"/></g>
+  <g class="px" style="--d:1.79s"><rect x="50" y="202" width="14" height="14" fill="#3fb950"/><rect x="80" y="202" width="14" height="14" fill="#3fb950"/><rect x="170" y="202" width="14" height="14" fill="#3fb950"/><rect x="200" y="202" width="14" height="14" fill="#3fb950"/></g>
+  <g class="px" style="--d:1.86s"><rect x="95" y="217" width="14" height="14" fill="#3fb950"/><rect x="110" y="217" width="14" height="14" fill="#3fb950"/><rect x="140" y="217" width="14" height="14" fill="#3fb950"/><rect x="155" y="217" width="14" height="14" fill="#3fb950"/></g>
+  <g class="ln" style="--d:1.37s"><text x="300" y="108" font-weight="bold"><tspan fill="#3fb950">muodosta</tspan><tspan fill="#8b949e">@</tspan><tspan fill="#3fb950">github</tspan></text><rect x="300" y="117" width="126" height="1" fill="#30363d"/></g>
+  <g class="ln" style="--d:1.51s"><text x="300" y="142" fill="#58a6ff" font-weight="bold">role</text><text x="410" y="142" fill="#c9d1d9" font-weight="normal">backend / devops</text></g>
+  <g class="ln" style="--d:1.65s"><text x="300" y="166" fill="#58a6ff" font-weight="bold">stack</text><text x="410" y="166" fill="#c9d1d9" font-weight="normal">python · bash · oracle · docker</text></g>
+  <g class="ln" style="--d:1.79s"><text x="300" y="190" fill="#58a6ff" font-weight="bold">now</text><text x="410" y="190" fill="#c9d1d9" font-weight="normal">proxies &amp; server utilities</text></g>
+  <g class="ln" style="--d:1.93s"><text x="300" y="214" fill="#58a6ff" font-weight="bold">uptime</text><text x="410" y="214" fill="#c9d1d9" font-weight="normal">4y 8m</text></g>
+  <g class="ln" style="--d:2.07s"><text x="300" y="238" fill="#58a6ff" font-weight="bold">repos</text><text x="410" y="238" fill="#c9d1d9" font-weight="normal">5 (3 own, 2 forks)</text></g>
+  <g class="ln" style="--d:2.21s"><text x="300" y="262" fill="#58a6ff" font-weight="bold">stars</text><text x="410" y="262" fill="#c9d1d9" font-weight="normal">0</text></g>
+  <g class="ln" style="--d:2.35s"><text x="300" y="286" fill="#58a6ff" font-weight="bold">followers</text><text x="410" y="286" fill="#c9d1d9" font-weight="normal">9</text></g>
+  <g class="ln" style="--d:2.49s"><text x="300" y="322" fill="#58a6ff" font-weight="bold">languages</text></g>
+  <g class="ln" style="--d:2.63s"><text x="300" y="346" fill="#c9d1d9" font-weight="normal">Shell</text><rect x="410" y="336" width="200" height="10" rx="2" fill="#21262d"/><text x="622" y="346" fill="#8b949e" font-weight="normal">88%</text></g>
+  <g class="bar" style="--d:2.78s"><rect x="410" y="336" width="176.9" height="10" rx="2" fill="#3fb950"/></g>
+  <g class="ln" style="--d:2.77s"><text x="300" y="370" fill="#c9d1d9" font-weight="normal">Python</text><rect x="410" y="360" width="200" height="10" rx="2" fill="#21262d"/><text x="622" y="370" fill="#8b949e" font-weight="normal">12%</text></g>
+  <g class="bar" style="--d:2.92s"><rect x="410" y="360" width="23.1" height="10" rx="2" fill="#3fb950"/></g>
+  <g class="ln" style="--d:2.91s"><rect x="300" y="400" width="22" height="14" rx="2" fill="#ff5f56"/><rect x="326" y="400" width="22" height="14" rx="2" fill="#ffbd2e"/><rect x="352" y="400" width="22" height="14" rx="2" fill="#27c93f"/><rect x="378" y="400" width="22" height="14" rx="2" fill="#58a6ff"/><rect x="404" y="400" width="22" height="14" rx="2" fill="#bc8cff"/><rect x="430" y="400" width="22" height="14" rx="2" fill="#39c5cf"/><rect x="456" y="400" width="22" height="14" rx="2" fill="#c9d1d9"/><rect x="482" y="400" width="22" height="14" rx="2" fill="#8b949e"/></g>
+  <g class="ln" style="--d:3.19s"><text x="40" y="452"><tspan fill="#3fb950">muodosta@github</tspan><tspan fill="#8b949e">:~$ </tspan><tspan class="cur" fill="#c9d1d9">█</tspan></text></g>
 </svg>
