@@ -20,7 +20,7 @@ CONFIG = {
     "stack": "python · postgresql · docker",
     "now": "proxies & server utilities",
 }
-MAX_LANGS = 4
+MAX_LANGS = 6
 # Языки, которые не нужно показывать (разметка, конфиги и т.п.)
 EXCLUDE_LANGS = {"HTML", "CSS", "Jupyter Notebook", "Dockerfile"}
 
