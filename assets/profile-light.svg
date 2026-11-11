@@ -35,16 +35,16 @@
   <g class="ln" style="--d:2.21s"><text x="300" y="262" fill="#0969da" font-weight="bold">stars</text><text x="410" y="262" fill="#24292f" font-weight="normal">18</text></g>
   <g class="ln" style="--d:2.35s"><text x="300" y="286" fill="#0969da" font-weight="bold">followers</text><text x="410" y="286" fill="#24292f" font-weight="normal">9</text></g>
   <g class="ln" style="--d:2.49s"><text x="300" y="322" fill="#0969da" font-weight="bold">languages</text></g>
-  <g class="ln" style="--d:2.63s"><text x="300" y="346" fill="#24292f" font-weight="normal">Python</text><rect x="410" y="336" width="200" height="10" rx="2" fill="#eaeef2"/><text x="622" y="346" fill="#57606a" font-weight="normal">65%</text></g>
-  <g class="bar" style="--d:2.78s"><rect x="410" y="336" width="131.0" height="10" rx="2" fill="#1a7f37"/></g>
+  <g class="ln" style="--d:2.63s"><text x="300" y="346" fill="#24292f" font-weight="normal">Python</text><rect x="410" y="336" width="200" height="10" rx="2" fill="#eaeef2"/><text x="622" y="346" fill="#57606a" font-weight="normal">66%</text></g>
+  <g class="bar" style="--d:2.78s"><rect x="410" y="336" width="131.2" height="10" rx="2" fill="#1a7f37"/></g>
   <g class="ln" style="--d:2.77s"><text x="300" y="370" fill="#24292f" font-weight="normal">C#</text><rect x="410" y="360" width="200" height="10" rx="2" fill="#eaeef2"/><text x="622" y="370" fill="#57606a" font-weight="normal">21%</text></g>
-  <g class="bar" style="--d:2.92s"><rect x="410" y="360" width="41.9" height="10" rx="2" fill="#1a7f37"/></g>
+  <g class="bar" style="--d:2.92s"><rect x="410" y="360" width="41.8" height="10" rx="2" fill="#1a7f37"/></g>
   <g class="ln" style="--d:2.91s"><text x="300" y="394" fill="#24292f" font-weight="normal">TypeScript</text><rect x="410" y="384" width="200" height="10" rx="2" fill="#eaeef2"/><text x="622" y="394" fill="#57606a" font-weight="normal">7%</text></g>
   <g class="bar" style="--d:3.06s"><rect x="410" y="384" width="13.1" height="10" rx="2" fill="#1a7f37"/></g>
   <g class="ln" style="--d:3.05s"><text x="300" y="418" fill="#24292f" font-weight="normal">Shell</text><rect x="410" y="408" width="200" height="10" rx="2" fill="#eaeef2"/><text x="622" y="418" fill="#57606a" font-weight="normal">3%</text></g>
   <g class="bar" style="--d:3.20s"><rect x="410" y="408" width="5.4" height="10" rx="2" fill="#1a7f37"/></g>
   <g class="ln" style="--d:3.19s"><text x="300" y="442" fill="#24292f" font-weight="normal">JavaScript</text><rect x="410" y="432" width="200" height="10" rx="2" fill="#eaeef2"/><text x="622" y="442" fill="#57606a" font-weight="normal">2%</text></g>
-  <g class="bar" style="--d:3.34s"><rect x="410" y="432" width="3.1" height="10" rx="2" fill="#1a7f37"/></g>
+  <g class="bar" style="--d:3.34s"><rect x="410" y="432" width="3.0" height="10" rx="2" fill="#1a7f37"/></g>
   <g class="ln" style="--d:3.33s"><text x="300" y="466" fill="#24292f" font-weight="normal">PowerShell</text><rect x="410" y="456" width="200" height="10" rx="2" fill="#eaeef2"/><text x="622" y="466" fill="#57606a" font-weight="normal">1%</text></g>
   <g class="bar" style="--d:3.48s"><rect x="410" y="456" width="2.0" height="10" rx="2" fill="#1a7f37"/></g>
   <g class="ln" style="--d:3.47s"><rect x="300" y="496" width="22" height="14" rx="2" fill="#ff5f56"/><rect x="326" y="496" width="22" height="14" rx="2" fill="#ffbd2e"/><rect x="352" y="496" width="22" height="14" rx="2" fill="#27c93f"/><rect x="378" y="496" width="22" height="14" rx="2" fill="#0969da"/><rect x="404" y="496" width="22" height="14" rx="2" fill="#bc8cff"/><rect x="430" y="496" width="22" height="14" rx="2" fill="#39c5cf"/><rect x="456" y="496" width="22" height="14" rx="2" fill="#24292f"/><rect x="482" y="496" width="22" height="14" rx="2" fill="#57606a"/></g>
