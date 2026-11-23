@@ -36,7 +36,7 @@
   <g class="ln" style="--d:2.35s"><text x="300" y="286" fill="#58a6ff" font-weight="bold">followers</text><text x="410" y="286" fill="#c9d1d9" font-weight="normal">7</text></g>
   <g class="ln" style="--d:2.49s"><text x="300" y="322" fill="#58a6ff" font-weight="bold">languages</text></g>
   <g class="ln" style="--d:2.63s"><text x="300" y="346" fill="#c9d1d9" font-weight="normal">Python</text><rect x="410" y="336" width="200" height="10" rx="2" fill="#21262d"/><text x="622" y="346" fill="#8b949e" font-weight="normal">70%</text></g>
-  <g class="bar" style="--d:2.78s"><rect x="410" y="336" width="139.5" height="10" rx="2" fill="#3fb950"/></g>
+  <g class="bar" style="--d:2.78s"><rect x="410" y="336" width="139.4" height="10" rx="2" fill="#3fb950"/></g>
   <g class="ln" style="--d:2.77s"><text x="300" y="370" fill="#c9d1d9" font-weight="normal">TypeScript</text><rect x="410" y="360" width="200" height="10" rx="2" fill="#21262d"/><text x="622" y="370" fill="#8b949e" font-weight="normal">19%</text></g>
   <g class="bar" style="--d:2.92s"><rect x="410" y="360" width="37.1" height="10" rx="2" fill="#3fb950"/></g>
   <g class="ln" style="--d:2.91s"><text x="300" y="394" fill="#c9d1d9" font-weight="normal">Kotlin</text><rect x="410" y="384" width="200" height="10" rx="2" fill="#21262d"/><text x="622" y="394" fill="#8b949e" font-weight="normal">8%</text></g>
